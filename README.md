@@ -21,13 +21,8 @@ Launch it with the required command line arguments of group ID:<br>
 ./100members.sh 1412<br>
 
 # REQUIRED FILES
-apiKey.sh: Get a Bungie API key and insert in file (https://www.bungie.net/en/User/API)<br>
 100members.sh: Primary script<br>
 
-# ABOUT apiKey.sh #
-Get yourself an API key at Bungie.net<br>
-Place it in the file<br>
-Thats all<br>
 <br>
 <br>
 "I dont have time to explain why I dont have time to explain" --The Stranger<br>
