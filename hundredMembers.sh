@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ########################################
-####     the100.io Members v2.5     ####
+####     the100.io Members v2.6     ####
 #### Scrapes member list from group ####
 #### 	  the100:  /u/L0r3          ####
 ####      Reddit:  /u/L0r3_Titan    ####
@@ -12,13 +12,11 @@
 #### BEGIN 100 MEMBER LIST SECTION ####
 #######################################
 
-the100group="$1"
-
 hundredMembers ()
 {
 
 #### CHECK IF 100 GROUP ID PARAMETER ENTERED ON LAUNCH ####
-#the100group="$1"
+the100group="$1"
 
 if [ -z "$the100group" ]
 then
@@ -91,3 +89,4 @@ echo
 #### END 100 MEMBER LIST SECTION ####
 #####################################
 
+hundredMembers
