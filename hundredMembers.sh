@@ -1,19 +1,25 @@
 #!/bin/bash
 
 ########################################
-####     the100.io Members v3.0     ####
+####     the100.io Members v3.1     ####
 #### Get the100.io members from API ####
 #### 	  the100:  /u/L0r3          ####
 ####      Reddit:  /u/L0r3_Titan    ####
 ####      Twitter: @L0r3_Titan      ####
 ########################################
 
-clear
+# final list of group members is in bash array "arrMembers"
+# number of members in final list in string "$totalMembers"
 
-source ${BASH_SOURCE[0]/%hundredMembers.sh/apiKey100.sh}
-
-#### CHECK IF 100 GROUP ID PARAMETER ENTERED ON LAUNCH ####
+#### INPUT LAUNCH PARAMETERS ####
 the100group="$1"
+
+#### MAIN FUNCTION ####
+hundredMembers ()
+{
+
+#### CHECK IF THE100 GROUP ID PARAMETER ENTERED ON LAUNCH ####
+source ${BASH_SOURCE[0]/%hundredMembers.sh/apiKeys.sh}
 
 if [ -z "$the100group" ]
 then
@@ -24,7 +30,7 @@ then
 	echo
 	exit
 else
-	echo; echo; echo "### Getting members of group $the100group from the API ###"
+	echo; echo; echo "### Getting members of group $the100group from the the100 API ###"
 fi
 
 #### SET UP VARIABLES ####
@@ -61,8 +67,13 @@ arrMembers=($delimitMembers)
 IFS="$oIFS"
 
 #### PRINT MEMBER LIST ####
-echo; echo "### Group $the100group total members: ${#arrMembers[*]} ###"
+totalMembers=`echo ${#arrMembers[*]}`
+echo; echo "### Group $the100group total members: $totalMembers ###"
 theList=`printf '%s\n' "${arrMembers[@]}" | sed 's/%20/ /g'`
+#echo "$theList"
+
+}
+
+#### UNCOMMENT 2 LINES BELOW TO RUN STAND ALONE ####
+hundredMembers
 echo "$theList"
-
-
